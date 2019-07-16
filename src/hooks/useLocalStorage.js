@@ -13,6 +13,8 @@ const useLocalStorage = (key, initialValue) => {
         return item ? JSON.parse(item) : initialValue;
     });
 
+    // const [storedValue, setStoredValue] = useState('dark-mode');
+
     // This function is setting a provided value to localStorage with
     // the key already provided in the useLocalStorage hook.
     const setValue = value => {
@@ -22,7 +24,7 @@ const useLocalStorage = (key, initialValue) => {
         window.localStorage.setItem(key, JSON.stringify(value));
     };
 
-    // console.log(storedValue);
+    console.log("storedValue state within useLocalStorage.js", storedValue);
     return [storedValue, setValue];
 }
 
